@@ -3,8 +3,14 @@ const jwt = require('jsonwebtoken');
 const bcrypt = require('bcrypt');
 const bodyParser = require('body-parser');
 
+const path = require('path'); // for local testing
+// access to the public folder
+
 const app = express();
 app.use(bodyParser.json());
+
+app.use(express.static(path.join(__dirname, 'public'))); // for testing
+//
 
 const JWT_SECRET = 'jwt_secret_here!';
 let users = [];
