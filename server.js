@@ -59,3 +59,6 @@ app.listen(3000, () => {
     console.log('Server running on port 3000');
 });
 
+// to run server, enter into terminal
+// 'node server.js'
+
