@@ -30,7 +30,8 @@ app.post('/login', async (req, res) => {
     const user = users.find(u  => u.username === username);
     if (user && await bcrypt.compare(password, user.password)) {
         const token = jwt.sign({username}, JWT_SECRET, {expiresIn: '1h'});
-        res.send({token})
+        res.send({token, message: 'Successful login'})
+        //res.send({message:'User logged in successfully.'});
     }else{
         res.status(401).send({message:'Invalid username or password'});
     }
@@ -42,10 +43,10 @@ app.post('/incident',(req, res) => {
     res.send({message:'Incident registered successfully.'});
 });
 
-app.post('/dashboard',(req, res) => {
+app.get('/dashboard',(req, res) => {
     const authHeader = req.headers.authorization;
 
-    const token = authHeader && authHeader.authorization.split(' ')[1];
+    const token = authHeader && authHeader.split(' ')[1];
     // get the auth token from the header
     // format: Authorization: Bearer thisIsTheToken
     if(!token) return res.status(401).send({message:'No token'});

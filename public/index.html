@@ -13,26 +13,36 @@
         <form id="register-form">
             <h2>Register</h2>
             <input type="text" id="reg-username" placeholder="Enter username" required>
-            <input type="text" id="reg-password" placeholder="Enter password" required>
+            <input type="password" id="reg-password" placeholder="Enter password" required>
             <button type="submit">Register</button>
         </form>
 
-        <!-- Register here -->
+        <!-- Login here -->
         <form id="login-form">
             <h2>Login</h2>
             <input type="text" id="login-username" placeholder="Enter username" required>
-            <input type="text" id="login-password" placeholder="Enter password" required>
+            <input type="password" id="login-password" placeholder="Enter password" required>
             <button type="submit">Login</button>
         </form>
 
-        <!-- Register here -->
+        <!-- Report here -->
         <form id="report-form">
             <h2>Report Incident</h2>
             <input type="text" id="report-title" placeholder="Enter title" required>
             <input type="text" id="report-desc" placeholder="Enter description" required>
-            <button type="submit">Submit incident</button>
+            <button id="reportButton" type="submit">Submit incident</button>
         </form>
+
+        <!-- Fetch reports here -->
+        <button id="dashboard-button">View Incidents</button>
+        <ul id="incident-list"></ul>
+
     </div>
+
+    <div id="user-info">
+        <p id="username-display"></p>
+    </div>
+
     <script src="app.js"></script>
 </body>
 </html>

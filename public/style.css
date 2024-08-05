@@ -1,7 +1,15 @@
 body{
     font-family: Arial, sans-serif;
     margin: 20px;
+
+    background: #adbbff;
+    background: linear-gradient(180deg, #adbbff 24%, #102047 100%);
+
+    background-size: cover;  /* Ensure the gradient stretches to cover the entire viewport */
+    height: 100vh; /* Ensure the body takes up the full height of the viewport */
+
 }
+
 h1, h2{
     color: #333;
 }
@@ -12,4 +20,8 @@ input, textarea, button{
     display: block;
     width: 100%;
     margin-bottom: 10px;
+}
+#reportButton{
+    margin-top: 50px;
+    margin-bottom: -15px;
 }
